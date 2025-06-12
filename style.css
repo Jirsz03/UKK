@@ -1,0 +1,36 @@
+html {
+scroll-behavior: inherit;
+}
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+    [data-animate].animate {
+      opacity: 1;
+      transform: translateY(0);
+}
+
+body, p, label, input, textarea, button, a, h1, h2, h3, h4, h5, h6, li, span {
+      color: #5C4033;
+ }
+
+.text-indigo-700 {
+      color: #613b2a !important;
+}
+.hover\:text-indigo-900:hover {
+      color: #888888 !important;
+}
+.bg-indigo-700 {
+      background-color: #5C4033 !important;
+}
+.hover\:bg-indigo-800:hover {
+      background-color: #795429 !important;
+}
+.focus\:ring-indigo-500:focus {
+      --tw-ring-color: #6b3e31 !important;
+}
+  
+footer {
+      color: #523c21;
+}

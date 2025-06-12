@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Media Pembelajaran Pendidikan Pancasila - Kontak</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="font-inter bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="SMK2.png" alt="Logo SMK2" width="40" height="40" class="w-10 h-10"/>
+        <span class="font-semibold text-xl text-indigo-700">Belajar dari Kekayaan Tradisi</span>
+      </a>
+      <nav>
+        <ul class="hidden md:flex space-x-8 font-semibold text-indigo-700">
+          <li><a href="index.html" class="hover:text-indigo-900 transition">Beranda</a></li>
+          <li><a href="materi.html" class="hover:text-indigo-900 transition">Daftar Materi</a></li>
+          <li><a href="tentang.html" class="hover:text-indigo-900 transition">Tentang</a></li>
+          <li><a href="kontak.html" class="hover:text-indigo-900 transition">Kontak</a></li>
+        </ul>
+        <button aria-label="Toggle menu" class="md:hidden text-indigo-700 focus:outline-none" id="nav-toggle">
+          <i class="fas fa-bars fa-lg"></i>
+        </button>
+      </nav>
+    </div>
+    <div class="hidden md:hidden bg-white shadow-md" id="mobile-menu">
+      <ul class="flex flex-col space-y-2 px-4 py-3 font-semibold text-indigo-700">
+        <li><a href="index.html" class="block hover:text-indigo-900 transition">Beranda</a></li>
+        <li><a href="materi.html" class="block hover:text-indigo-900 transition">Daftar Materi</a></li>
+        <li><a href="tentang.html" class="block hover:text-indigo-900 transition">Tentang</a></li>
+        <li><a href="kontak.html" class="block hover:text-indigo-900 transition">Kontak</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="flex-grow container mx-auto px-4 py-8 max-w-3xl">
+    <h2 class="text-3xl font-bold text-indigo-700 mb-6 text-center">Kontak Kami</h2>
+    <form id="contact-form" class="bg-white rounded-lg shadow-md p-6 space-y-6" novalidate>
+      <div>
+        <label for="name" class="block text-gray-700 font-semibold mb-1">Nama Lengkap</label>
+        <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"/>
+        <p id="error-name" class="text-red-600 text-sm mt-1 hidden">Nama wajib diisi.</p>
+      </div>
+      <div>
+        <label for="email" class="block text-gray-700 font-semibold mb-1">Email</label>
+        <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"/>
+        <p id="error-email" class="text-red-600 text-sm mt-1 hidden">Email tidak valid.</p>
+      </div>
+      <div>
+        <label for="message" class="block text-gray-700 font-semibold mb-1">Pesan</label>
+        <textarea id="message" name="message" rows="4" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+        <p id="error-message" class="text-red-600 text-sm mt-1 hidden">Pesan wajib diisi.</p>
+      </div>
+      <button type="submit" class="bg-indigo-700 text-white font-semibold px-6 py-3 rounded hover:bg-indigo-800 transition w-full md:w-auto">Kirim Pesan</button>
+    </form>
+  </main>
+
+  <footer class="bg-indigo-700 text-white py-6 mt-12 text-center text-sm">
+    © 2025 Media Pembelajaran Pendidikan Pancasila. Semua hak cipta dilindungi.
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      ['name', 'email', 'message'].forEach(id => {
+        document.getElementById(`error-${id}`).classList.add('hidden');
+      });
+
+      let valid = true;
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const message = contactForm.message.value.trim();
+
+      if (!name) {
+        document.getElementById('error-name').classList.remove('hidden');
+        valid = false;
+      }
+      if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+        document.getElementById('error-email').classList.remove('hidden');
+        valid = false;
+      }
+      if (!message) {
+        document.getElementById('error-message').classList.remove('hidden');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      alert('Terima kasih atas pesan Anda! Kami akan segera menghubungi Anda.');
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>

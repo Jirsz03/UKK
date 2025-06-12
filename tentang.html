@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Media Pembelajaran Pendidikan Pancasila - Tentang</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="font-inter bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto flex items-center justify-between px-4 py-3">
+      <a href="beranda.html" class="flex items-center space-x-2">
+        <img src="SMK2.png" alt="Logo SMK2" width="40" height="40" class="w-10 h-10"/>
+        <span class="font-semibold text-xl text-indigo-700">Belajar dari Kekayaan Tradisi</span>
+      </a>
+      <nav>
+        <ul class="hidden md:flex space-x-8 font-semibold text-indigo-700">
+          <li><a href="beranda.html" class="hover:text-indigo-900 transition">Beranda</a></li>
+          <li><a href="materi.html" class="hover:text-indigo-900 transition">Daftar Materi</a></li>
+          <li><a href="tentang.html" class="hover:text-indigo-900 transition">Tentang</a></li>
+          <li><a href="kontak.html" class="hover:text-indigo-900 transition">Kontak</a></li>
+        </ul>
+        <button aria-label="Toggle menu" class="md:hidden text-indigo-700 focus:outline-none" id="nav-toggle">
+          <i class="fas fa-bars fa-lg"></i>
+        </button>
+      </nav>
+    </div>
+    <div class="hidden md:hidden bg-white shadow-md" id="mobile-menu">
+      <ul class="flex flex-col space-y-2 px-4 py-3 font-semibold text-indigo-700">
+        <li><a href="beranda.html" class="block hover:text-indigo-900 transition">Beranda</a></li>
+        <li><a href="materi.html" class="block hover:text-indigo-900 transition">Daftar Materi</a></li>
+        <li><a href="tentang.html" class="block hover:text-indigo-900 transition">Tentang</a></li>
+        <li><a href="kontak.html" class="block hover:text-indigo-900 transition">Kontak</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+    <h2 class="text-3xl font-bold text-indigo-700 mb-6 text-center">Tentang Media Pembelajaran</h2>
+    <div class="flex flex-col md:flex-row items-center md:space-x-8">
+      <img src="Scribble Line Of Garuda Pancasila Vector Illustration, Garuda Pancasila Vector Illustration Garuda Pancasila Vector Illustration, Scribble PNG Transparent Image and Clipart for Free Download.jpg" alt="Burung garuda emas simbol Pancasila" class="rounded-lg shadow-lg w-full md:w-1/2 mb-6 md:mb-0" width="400" height="300"/>
+      <div class="text-gray-700 text-lg">
+        <p class="mb-4">
+          Media Pembelajaran Pendidikan Pancasila ini dirancang untuk membantu pelajar dan masyarakat memahami nilai-nilai luhur Pancasila dengan cara yang interaktif dan mudah dipahami.
+        </p>
+        <p>
+          Selamat belajar dan mari kita jaga nilai-nilai Pancasila dalam kehidupan sehari-hari.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-indigo-700 text-white py-6 mt-12 text-center text-sm">
+    © 2025 Media Pembelajaran Pendidikan Pancasila. Semua hak cipta dilindungi.
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
